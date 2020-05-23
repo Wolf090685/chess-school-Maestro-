@@ -639,6 +639,7 @@ button::-moz-focus-inner {
     width: 320px;
     height: 56px;
     margin: 17px auto;
+    padding: 0 15px;
     font-size: 18px;
     background-color: #494343;
     border: none;
