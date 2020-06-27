@@ -34,16 +34,13 @@ $(function () {
             blockId = $(this).data('scroll'),
             blockOfset = $(blockId).offset().top;
 
-        $('#nav a').removeClass('active');
-        $(this).addClass('active');        
+        $('#menu a').removeClass('active');
+        $(this).addClass('active');
+        $('.menu__list').removeClass('show');
 
         $("html, body").animate({
             scrollTop: blockOfset
         }, 700);
-
-        if ($(window).width()<920) {
-            $('.menu__list').slideToggle();
-        }
 
     });
 
@@ -57,8 +54,9 @@ $(function () {
 
     // Burger menu nav toogle
 
-    $('.nav-toggle').on('click', function () {
-        $('.menu__list').slideToggle();
+    $('.nav-toggle').on('click', function (event) {
+        event.preventDefault();
+        $('.menu__list').toggleClass('show');
     });
 
     // Slider 
@@ -131,5 +129,29 @@ $(function () {
         call.classList.remove('more-splash');
         document.body.style.overflow = '';
     });
+
+    $(document).click(function (event) {
+        if ($(event.target).is(overlay)) {
+            $(overlay, '#consultation').fadeOut('slow');
+            $('body').css('overflow', '');
+        }
+    });
+
+    // Validate modal
+
+    function validateForms(form) {
+        $(form).validate({
+            rules: {
+                phone: "required"
+            },
+            messages: {
+                phone: "Введите номер телефона",
+            }
+        });
+    }
+
+    validateForms('#consultation form');
+
+    $('input[name=phone]').mask("+7 (999) 999-99-99");
 
 });

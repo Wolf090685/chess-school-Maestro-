@@ -101,7 +101,7 @@ button::-moz-focus-inner {
     width: 100%;
     height: 3px;
     opacity: 0;
-    background-color: rgba(0,119,170,0.77);;
+    background-color: rgba(0,119,170,0.77);
     position: absolute;
     top: 85%;
     left: 0;
@@ -611,7 +611,7 @@ button::-moz-focus-inner {
     text-align: center;
   }
 .popup-form {
-    background: url(../image/modal.png) center no-repeat;
+    background: url(../image/faq-bg.jpg) center no-repeat;
     background-size: cover;
     padding: 20px 88px 50px 88px;
     color: #000;
@@ -686,6 +686,16 @@ button::-moz-focus-inner {
     box-shadow: 0 0 10px #c78030;
     background-color: rgb(121, 112, 112);
   }
+
+.popup .error {
+	border: 1px solid red;
+}
+
+.popup label.error {
+	border: none;
+	text-align: center;
+	margin-bottom: 15px;
+}
 
 /* Animation */
 
@@ -787,22 +797,6 @@ button::-moz-focus-inner {
     bottom: -8px;
 }
 
-/* Крестик для активного бургера */
-
-/* .nav-toggle.active .nav-toggle__item {
-    background: none;
-}
-
-.nav-toggle.active .nav-toggle__item::before {
-    transform-origin: left top;
-    transform: rotate(45deg) translateX(-4px);
-}
-
-.nav-toggle.active .nav-toggle__item::after {
-    transform-origin: left bottom;
-    transform: rotate(-45deg) translateX(-3px);
-} */
-
 /* Media ========================== */
 
 @media (max-width:992px) {
@@ -832,9 +826,9 @@ button::-moz-focus-inner {
         z-index: 5;
     }
 
-    /* .menu__list.active {
-        display: block;
-    } */
+    .menu__list.show {
+        display: flex;
+    }
 
     .menu__list-link {
         padding: 8px 20px;
