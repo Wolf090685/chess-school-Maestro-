@@ -639,6 +639,7 @@ button::-moz-focus-inner {
     width: 320px;
     height: 56px;
     margin: 17px auto;
+    padding: 0 15px;
     font-size: 18px;
     background-color: #494343;
     border: none;
@@ -954,4 +955,9 @@ button::-moz-focus-inner {
     .popup__close {
         right: 7px; 
     }
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> 8535d65b7b4d0c8a56ae632220fb7c20d2aa306b
