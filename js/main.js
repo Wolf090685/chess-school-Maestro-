@@ -4,7 +4,7 @@ $(function () {
 
     let offerH = $("#offer").innerHeight(),
         header = $("#header");
-    scrollOffset = $(window).scrollTop();
+        scrollOffset = $(window).scrollTop();
 
     // Fixed header
 
@@ -83,34 +83,21 @@ $(function () {
 
     // Scroll to top   
 
-    let scrolled,
-        timer,
-        btn = document.getElementById('to-top');
-
-    function scrollToTop() {
-        if (scrolled > 0) {
-            window.scrollTo(0, scrolled);
-            scrolled = scrolled - 250;
-            timer = setTimeout(scrollToTop, 50);
-        }
-        else {
-            clearTimeout(timer);
-            window.scrollTo(0, 0);
-        }
-    }
-
     $(window).on('scroll', function () {
-        scrolled = window.pageYOffset;
+        let scrolled = window.pageYOffset;
+        let btn = document.querySelector('.footer__to-top'); 
         if (scrolled > 400) {
-            btn.style.display = 'block';
+            btn.style.opacity = 1;
         } else {
-            btn.style.display = '';
-        }
+            btn.style.opacity = 0;
+        }      
     });
-
-    $(btn).on('click', function () {
-        scrollToTop();
-    });
+    $('.footer__to-top').on('click', function (event) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: 20
+        }, 600);
+    }); 
 
     // Modal
 
